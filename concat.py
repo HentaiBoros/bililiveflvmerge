@@ -66,14 +66,14 @@ def merge_videos(directory):
     subprocess.run(['ffmpeg', '-f', 'concat', '-safe', '0', '-i', 'videos.txt', '-c', 'copy', '-y', directory_merge_name], check=True)    # 命令完成后，程序才向下执行
 
     # 删除使用的FLV文件
-    # for video in flv_files:
-    #     os.remove(video)
-    #     print(f"Deleted {video}")
+    for video in flv_files:
+        os.remove(video)
+        print(f"Deleted {video}")
 
 if __name__ == "__main__":
     # 注意，使用的录播姬保存文件格式为yyyymmdd-HHMMSS-title.flv
-    base_directory = input('输入根目录绝对路径：')
-    # base_directory = r"G:\本地资源库\bilibili录播"
+    # base_directory = input('输入根目录绝对路径：')
+    base_directory = r"G:\本地资源库\三次元\bilibili录播"
     # 录播保存根目录
 
     while True:
